@@ -1,0 +1,123 @@
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+nav {
+  background-color: rgb(50, 50, 50);
+}
+
+nav a {
+  color: rgb(240, 240, 240);
+  display: inline-block;
+  text-decoration: none;
+  height: 60px;
+  line-height: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+  transition: all 0.5s ease;
+}
+
+nav a:hover {
+  background-color: rgb(150, 150, 150);
+}
+
+body {
+  background-image: url('../img/background.jpg');
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
+p {
+  text-align: justify;
+  text-indent: 1rem;
+}
+
+.container {
+  max-width: 960px;
+  margin: 20px auto;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  opacity: 0.5;
+  border-radius: 20px;
+}
+
+.container h1 {
+  margin: 0;
+}
+
+.container a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.container a:hover {
+  text-decoration: underline;
+}
+
+.code {
+  overflow: auto;
+  max-width: 100%;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container pre {
+  margin: 0;
+}
+
+.table-container table th,
+.table-container table td {
+  border: 1px solid rgb(50, 50, 50);
+  padding: 5px;
+}
+
+.back-link {
+  text-align: right;
+}
+
+.back-link a {
+  font-size: 10pt;
+  font-style: italic;
+}
+
+h2.section-header {
+  font-family: Consolas monospace;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+h2.section-header::before {
+  content: '{';
+}
+
+h2.section-header::after {
+  content: '}';
+}
+
+h3.small-header::before {
+  content: '[';
+}
+
+h3.small-header::after {
+  content: ']';
+}

@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript</title>
+    <link rel="stylesheet" href="../../../css/styles.css" />
+    <link rel="stylesheet" href="../../../css/highlight.min.css">
+    <script charset="UTF-8" type="application/javascript" src="../../../js/highlight.min.js"></script>
+    <script charset="UTF-8" type="application/javascript">
+      hljs.highlightAll();
+    </script>
+    <style>
+      #operator-tables tbody tr td:nth-child(1) {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="../../../index.html">Beranda</a>
+      <a href="../../index.html">Artikel</a>
+      <a href="../../../about.html">Tentang Saya</a>
+    </nav>
+    <div class="container">
+      <h1>Javascript</h1>
+
+      <p>
+        Javascript adalah salah satu bahasa pemrograman. Berbeda dengan HTML
+        ataupun CSS yang merupakan bahasa markup. Artinya, dengan Javascript
+        sebagai bahasa pemrograman, yang dipelajari adalah penyusunan logika
+        komputer.
+      </p>
+      <p>
+        Javascript sangat umum digunakan, terutama di website ataupun aplikasi
+        mobile. Biasanaya, Javascript dijalankan bersandingan dengan HTML dan
+        CSS yang mana dijalankan oleh browser semacam Firefox, Google Chrome
+        ataupun Edge. Tapi, Javascript juga bisa dijalankan tanpa browser,
+        yaitu menggunakan NodeJS, untuk pemrograman server atau aplikasi
+        berbasis desktop.
+      </p>
+
+      <h2 class="section-header" id="contents">Daftar Isi</h2>
+
+      <ul>
+        <li><a href="#javascript-di-html">Javascript di HTML</a></li>
+        <li><a href="#output">Output</a></li>
+        <li><a href="#variables">Variables</a></li>
+        <li><a href="#operator">Operator</a></li>
+        <li>
+          <a href="#data-type">Data Type</a>
+          <ul>
+            <li><a href="#data-type-number">boolean</a></li>
+            <li><a href="#data-type-number">number</a></li>
+            <li><a href="#data-type-number">string</a></li>
+            <li><a href="#data-type-number">array</a></li>
+            <li><a href="#data-type-number">object</a></li>
+          </ul>
+        </li>
+        <li><a href="#function">Function</a></li>
+        <li><a href="#return-stmt">Return Statement</a></li>
+        <li><a href="#method">Method</a></li>
+        <li><a href="#conditional">Conditional</a></li>
+      </ul>
+
+      <h2 class="section-header" id="javascript-di-html">Javascript di HTML</h2>
+
+      <p>
+        Untuk memulai program Javascript di browser, yang pertama dilakukan
+        adalah dengan membuat link ke Javascript dari file HTML.
+        Contoh:
+      </p>
+
+      <p><pre class="code language-javascript"><code>&lt;html&gt;
+  &lt;head&gt;
+    &lt;script charset=&quot;UTF-8&quot; type=&quot;application/javascript&quot; src=&quot;path/ke/lokasi/javascript.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+&lt;/html&gt;</code></pre></p>
+
+      <p class="back-link"><a href="#contents">Daftar isi</a></p>
+
+      <h2 class="section-header" id="statement">Statement</h2>
+
+      <p>Program javascript dieksekusi baris perbaris. Artinya, dalam memproses
+      file javascript, browser akan membaca baris-perbaris source code dan
+      langsung dieksekusi seketika itu juga. Contoh:</p>
+
+      <p><pre class="code language-javascript"><code>const a = 1;
+const b = 2;
+const c = a + b;
+alert(c);</code></pre></p>
+
+      <p>Program tersebut akan menampilkan dialog dengan isi <strong>3</strong>.</p>
+
+      <p>Setiap baris program dalam javascript ditutup dengan tanda
+      <code>;</code>. Dalam peristilahan pemrograman, baris code yang dieksekusi
+      oleh program disebut dengan istilah <em>statement</em>.</p>
+
+      <p class="back-link"><a href="#contents">Daftar isi</a></p>
+
+      <h2 class="section-header" id="output">Output</h2>
+
+      <p>Output atau hasil program javascript dapat ditampilkan dengan berbagai
+      cara. Untuk pemula, agar lebih muda diobservasi, umumnya output javascript
+      dilakukan dengan menggunakan <code>alert</code> sebagaimana di atas.
+      Akan tetapi, penggunaan <code>alert</code> sebagaimana di atas dapat
+      mengganggu penggunaan website.</p>
+
+      <p>Cara lain yang lebih tidak mengganggu adalah menggunakan <code>console.log</code>. Contohnya:</p>
+
+      <p><pre class="code language-javascript"><code>const a = 1;
+const b = 2;
+const c = a + b;
+console.log(c);</code></pre></p>
+
+        <p>Untuk melihat hasil program di atas, harus membuka <em>developer
+        tools</em> terlebih dahulu.</p>
+
+      <p class="back-link"><a href="#contents">Daftar isi</a></p>
+
+      <h2 class="section-header" id="variables">Variables</h2>
+
+      <p>Variable digunakan untuk memberi nama pada suatu data agar mudah
+      diingat oleh penulis program. Pembuatan variable dapat dilakukan dengan
+      tiga cara, yaitu:</p>
+
+      <ul>
+        <li><code>const c = 3;</code></li>
+        <li><code>let b = 2;</code></li>
+        <li><code>var a = 1;</code></li>
+      </ul>
+
+      <p>Perbedaannya, <code>const</code> digunakan untuk menamai variable yang
+      tidak akan diganti lagi. Contohnya:</p>
+
+      <p><pre class="code language-javascript"><code>const a = 1;
+a = 10;</code></pre></p>
+
+        <p>Program di atas akan error, karena program tersebut mencoba merubah
+        variable <code>a</code> yang asalnya berisi <code>1</code> menjadi
+        <code>10</code>. Berbeda dengan <code>let</code> atau <code>var</code>,
+        keduanya mengizinkan perubahan data/isi variable. Contoh:</p>
+
+      <p><pre class="code language-javascript"><code>let a = 1;
+var b = 2;
+a = 10;
+b = 20;</code></pre></p>
+
+        <p>Program tersebut dapat berjalan tanpa masalah.</p>
+
+        <p>Karena <code>const</code> tidak dapat dirubah, maka disarankan untuk
+        menggunakan <code>const</code> selama tidak ada rencana perubahan isi
+        variable.</p>
+
+      <p class="back-link"><a href="#contents">Daftar isi</a></p>
+
+        <h2 class="section-header" id="operator">Operator</h2>
+
+        <p>Javascript menyediakan beberapa operator untuk operasi aritmetika sederhana:</p>
+
+        <div class="table-container">
+          <table id="operator-tables">
+            <thead>
+              <tr>
+                <th>Operator</th>
+                <th>Fungsi</th>
+                <th>Contoh</th>
+                <th>Output</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>+</code></td>
+                <td>Penjumlahan</td>
+                <td><pre class="code language-javascript"><code>const a = 1;
+const b = 2;
+console.log(a + b);</code></pre></td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td><code>-</code></td>
+                <td>Pengurangan</td>
+                <td><pre class="code language-javascript"><code>const a = 1;
+const b = 2;
+console.log(a - b);</code></pre></td>
+                <td>-1</td>
+              </tr>
+              <tr>
+                <td><code>*</code></td>
+                <td>Perkalian</td>
+                <td><pre class="code language-javascript"><code>const a = 4;
+const b = 2;
+console.log(a * b);</code></pre></td>
+                <td>8</td>
+              </tr>
+              <tr>
+                <td><code>/</code></td>
+                <td>Pembagian</td>
+                <td><pre class="code language-javascript"><code>const a = 4;
+const b = 2;
+console.log(a / b);</code></pre></td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td><code>%</code></td>
+                <td>Sisa pembagian</td>
+                <td><pre class="code language-javascript"><code>const a = 4;
+const b = 3;
+console.log(a % b);</code></pre></td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td><code>===</code></td>
+                <td>Cek kesamaan variable</td>
+                <td><pre class="code language-javascript"><code>const a = 4;
+const b = 4;
+console.log(a === b);</code></pre></td>
+                <td><code>true</code></td>
+              </tr>
+              <tr>
+                <td><code>!==</code></td>
+                <td>Cek ketidaksamaan variable</td>
+                <td><pre class="code language-javascript"><code>const a = 4;
+const b = 4;
+console.log(a !== b);</code></pre></td>
+                <td><code>false</code></td>
+              </tr>
+              <tr>
+                <td><code>></code></td>
+                <td>Cek a lebih besar dari b</td>
+                <td><pre class="code language-javascript"><code>const a = 4;
+const b = 4;
+console.log(a > b);</code></pre></td>
+                <td><code>false</code></td>
+              </tr>
+              <tr>
+                <td><code>>=</code></td>
+                <td>Cek a lebih besar/sama dengan b</td>
+                <td><pre class="code language-javascript"><code>const a = 4;
+const b = 4;
+console.log(a >= b);</code></pre></td>
+                <td><code>true</code></td>
+              </tr>
+              <tr>
+                <td><code>&lt;</code></td>
+                <td>Cek a lebih kecil dari b</td>
+                <td><pre class="code language-javascript"><code>const a = 4;
+const b = 4;
+console.log(a &lt; b);</code></pre></td>
+                <td><code>false</code></td>
+              </tr>
+              <tr>
+                <td><code>&lt;=</code></td>
+                <td>Cek a lebih kecil/sama dengan b</td>
+                <td><pre class="code language-javascript"><code>const a = 4;
+const b = 4;
+console.log(a &lt;= b);</code></pre></td>
+                <td><code>true</code></td>
+              </tr>
+              <tr>
+                <td><code>&amp;&amp;</code></td>
+                <td>Cek a <strong>dan</strong> b adalah <code>true</code></td>
+                <td><pre class="code language-javascript"><code>const a = true;
+const b = false;
+console.log(a &amp;&amp; b);</code></pre></td>
+                <td><code>false</code></td>
+              </tr>
+              <tr>
+                <td><code>||</code></td>
+                <td>Cek a <strong>atau</strong> b adalah <code>true</code></td>
+                <td><pre class="code language-javascript"><code>const a = true;
+const b = false;
+console.log(a || b);</code></pre></td>
+                <td><code>true</code></td>
+              </tr>
+              <tr>
+                <td><code>!</code></td>
+                <td>Membalik <code>boolean</code></td>
+                <td><pre class="code language-javascript"><code>const a = true;
+console.log(!a);</code></pre></td>
+                <td><code>false</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    
+        <p>Urutan operasi dimulai dari perkalian/pembagian baru kemudian penjumlahan. Contohnya:</p>
+
+      <p class="back-link"><a href="#contents">Daftar isi</a></p>
+
+        <h2 class="section-header" id="data-type">Data Type</h2>
+
+        <p>
+          Dalam Javascript, ada setidaknya 3 <code>data type</code> primitif,
+          yaitu: <code>boolean</code>, <code>number</code> dan
+          <code>string</code>. Contohnya:
+        </p>
+
+      <p><pre class="code language-javascript"><code>
+const var1 = true;    // boolean
+const var2 = 10;      // number
+const var3 = '10';    // string
+</code></pre></p>
+
+      <p class="back-link"><a href="#contents">Daftar isi</a></p>
+
+      <h3 id="data-type-boolean" class="small-header"><code>boolean</code></h3>
+
+      <p>
+        <code>boolean</code> adalah <em>data type</em> digunakan untuk
+        menunjukkan benar (<code>true</code>) atau salah (<code>false</code>).
+        Contohnya:
+      </p>
+
+      <p><pre class="code language-javascript"><code>
+const var1 = 10;
+const var2 = 30;
+const var3 = var1 === var2;
+console.log(var3);
+</code></pre></p>
+
+      <p class="back-link"><a href="#contents">Daftar isi</a></p>
+
+      <h3 id="data-type-number" class="small-header"><code>number</code></h3>
+
+      <p>
+        <code>number</code> adalah <em>data type</em> yang digunakan untuk
+        menunjukkan nilai angka sehingga dapat dioperasikan menggunakan operator
+        aritmetik.
+      </p>
+
+      <p><pre class="code language-javascript"><code>
+const var1 = 10;
+const var2 = 30;
+const var3 = var1 + var2;
+console.log(var3); // 40
+</code></pre></p>
+
+      <p class="back-link"><a href="#contents">Daftar isi</a></p>
+
+      <h3 id="data-type-string" class="small-header"><code>string</code></h3>
+
+      <p>
+        <code>string</code> adalah <em>data type</em> yang digunakan untuk
+        menunjukkan teks atau tulisan. <code>string</code> ditulis dengan tanda
+        kutip satu <code>'</code> atau tanda kutip dua <code>"</code>.
+      </p>
+
+      <p><pre class="code language-javascript"><code>
+const var1 = 'variable 1';
+const var2 = "variable 2";
+const var3 = var1 + var2;
+console.log(var3); // variable 1variable 2
+</code></pre></p>
+
+      <p>
+        Kemudian, ada 2 <em>data type</em> komposit yang perlu diketahui, yaitu:
+        <code>array</code> dan <code>object</code>.
+      </p>
+
+      <p class="back-link"><a href="#contents">Daftar isi</a></p>
+
+      <h3 id="data-type-array" class="small-header"><code>array</code></h3>
+
+      <p>
+        <code>array</code> adalah <em>data type</em> yang digunakan untuk
+        menampung beberapa data sekaligus. Penulisan <code>array</code>, harus
+        dibuka dengan <code>[</code> dan ditutup dengan <code>]</code>. Isi
+        satu persatu array dikenal dengan sebutan <em>element</em>, yang
+        urutannya dimulai dari <strong>0</strong>.
+      </p>
+
+      <p><pre class="code language-javascript"><code>
+const cities = [
+    'Cilacap',
+    'New York',
+    'London',
+    'Lampung',
+];
+console.log(cities);
+</code></pre></p>
+
+      <p>
+        <em>Element</em> dalam <em>array</em> diakses dengan cara menuliskan
+        tanda <code>[</code>, kemudian nomor urut element dan ditutup dengan
+        tanda <code>]</code>. Contoh:
+      </p>
+
+      <p><pre class="code language-javascript"><code>
+const cities = [
+    'Cilacap',
+    'New York',
+    'London',
+    'Lampung',
+];
+console.log(cities[0]); // Cilacap
+console.log(cities[1]); // New York
+console.log(cities[2]); // London
+console.log(cities[3]); // Lampung
+</code></pre></p>
+
+      <p class="back-link"><a href="#contents">Daftar isi</a></p>
+
+      <h3 id="data-type-object" class="small-header"><code>object</code></h3>
+
+      <p>
+        <code>object</code> adalah <em>data type</em> yang digunakan untuk
+        menampung pasangan data dan labelnya (<em>property</em>). Penulisan object,
+        diawali dengan menulis tanda <code>{</code>, diikuti dengan <em>property</em>
+        yang ditulis dengan menuliskan labelnya, dilanjutkan dengan tanda
+        <code>:</code> kemudian isi data. <em>property</em> dipisah dengan
+        menggunakan tanda <code>,</code>. Contoh:
+      </p>
+
+      <p><pre class="code language-javascript"><code>
+const user = {
+  name: 'Ahmed',
+  age: 24,
+  phone: '081234567890',
+  email: 'ahmed@blkk.com'
+};
+</code></pre></p>
+
+      <p>
+        Contoh di atas adalah contoh <code>object</code> dengan empat <em>property</em>,
+        yaitu: <code>name</code>, <code>age</code>, <code>phone</code> dan <code>email</code>.
+      </p>
+
+      <p>
+        <em>Property</em> dalam <em>object</em> diakses dengan cara menuliskan
+        tanda <code>[</code>, kemudian string nama <em>property</em> dan ditutup dengan
+        tanda <code>]</code>. Contoh:
+      </p>
+
+      <p><pre class="code language-javascript"><code>
+const user = {
+  name: 'Ahmed',
+  age: 24,
+  phone: '081234567890',
+  email: 'ahmed@blkk.com'
+};
+console.log(user['name']);
+console.log(user['age']);
+console.log(user['phone']);
+console.log(user['email']);
+</code></pre></p>
+
+      <p>
+        <em>Property</em> milik <em>object</em> juga dapat diakses dengan cara
+        lebih simpel, yaitu dengan menuliskan tanda <code>.</code> kemudian
+        nama <em>property</em>nya. Cara ini hanya digunakan ketika labelnya hanya
+        tersusun dari huruf-huruf. Contoh:
+      </p>
+
+      <p><pre class="code language-javascript"><code>
+const user = {
+  name: 'Ahmed',
+  age: 24,
+  phone: '081234567890',
+  email: 'ahmed@blkk.com'
+};
+console.log(user.name);
+console.log(user.age);
+console.log(user.phone);
+console.log(user.email);
+</code></pre></p>
+
+      <p class="back-link"><a href="#contents">Daftar isi</a></p>
+
+      <h2 class="section-header" id="function">Function</h2>
+
+      <p>
+        <code>function</code> adalah sekumpulan <a
+        href="#statement"><code>statement</code></a> yang dikumpulkan menjadi
+        satu sehingga dapat digunakan berulang-ulang.
+      </p>
+
+      <p>Perhatikan contoh berikut:</p>
+
+      <p><pre class="code language-javascript"><code>
+const users = [
+  { name: 'Ahmed', age: '24' },
+  { name: 'Jack', age: '32' },
+  { name: 'John', age: '35' },
+];
+let text = 'Nama: ' + users[0].name + ', Usia: ' + users[0].age;
+console.log(text);
+text = 'Nama: ' + users[1].name + ', Usia: ' + users[1].age;
+console.log(text);
+text = 'Nama: ' + users[2].name + ', Usia: ' + users[2].age;
+console.log(text);
+</code></pre></p>
+
+      <p>
+        Code di atas melakukan penggabungan teks yang tersusun dari
+      </p>
+
+      <ol>
+        <li><code>'Nama: '</code></li>
+        <li>property <code>name</code> dari object ke <code>n</code> yang terdapat di <code>array</code> <code>users</code></li>
+        <li><code>', Usia: '</code></li>
+        <li>property <code>age</code> dari object ke <code>n</code> yang terdapat di <code>array</code> <code>users</code></li>
+      </ol>
+
+      <p>
+        Dalam code di atas, penggabungan <code>string</code> dilakukan sampai
+        tiga kali. Padahal, pada prinsipnya yang dilakukan ketiga
+        <code>statement</code> tersebut sama saja. Pengulangan code semacam ini
+        tidak disarankan karena jika ada perubahan code, kita harus merubah satu
+        per satu dari tiga <code>statement</code> tersebut.
+      </p>
+
+      <p>
+        Untuk itu, pengulangan code dapat disimplifikasi dengan membuat <code>function</code>. Contoh:
+      </p>
+
+      <p><pre class="code language-javascript"><code>
+function debugUser(user) {
+  let text = 'Nama: ' + users[0].name + ', Usia: ' + users[0].age;
+  console.log(text);
+}
+
+const users = [
+  { name: 'Ahmed', age: '24' },
+  { name: 'Jack', age: '32' },
+  { name: 'John', age: '35' },
+];
+debugUser(users[0]);
+debugUser(users[1]);
+debugUser(users[2]);
+</code></pre></p>
+
+      <p>
+        Pada contoh di atas, penggabungan <code>string</code> hanya dilakukan di
+        satu tempat. Jadi, seandainya ada perubahan code, yang perlu dirubah
+        hanyalah badan <code>function</code>nya.
+      </p>
+
+      <p>
+        Penulisan <code>function</code> harus diawali dengan kata kunci
+        <code>function</code>, diikuti dengan tanda kurung yang memuat daftar
+        parameter yang dipisah dengan koma, kemudian diikuti dengan bada
+        <code>function</code> yang dimuat di dalam tanda <code>{}</code>
+        (kurung kurawal).
+      </p>
+
+      <p><pre class="code-language-javascript"><code>
+function namaFunction(param1, param2, ...paramLainnya) {
+  // daftar statement
+}
+</code></pre></p>
+
+      <p>
+        Lalu, untuk menggunakan <code>function</code> yang sudah didefinisikan.
+        Tuliskan nama <code>function</code> diikuti dengan tanda kurung
+        (<code>()</code>) yang memuat daftar parameter. Contoh:
+      </p>
+
+      <p><pre class="code-language-javascript"><code>
+const a = 0;
+const b = 1;
+const c = 2;
+const d = 3;
+const e = 4;
+const f = 5;
+namaFunction(a, b);
+namaFunction(c, d);
+namaFunction(e, f);
+</code></pre></p>
+
+      <p>
+        Dalam pemrograman, menggunakan <code>function</code> disebut dengan <strong><em>function call</em></strong>.
+        Ketika <em>function call</em> berlangsung, setiap parameter yang ada di definisi <em>function</em> akan
+        diganti dengan data yang diberika saat <em>function call</em>. Misalkan ada definisi <em>function</em>
+        sebagaimana berikut:
+      </p>
+
+      <p><pre class="code-language-javascript"><code>
+function fungsiContoh(a, b) {
+  console.log(a);
+  console.log(b);
+}
+</code></pre></p>
+
+      <p>Jadi, ketika ada <em>statement</em> seperti di bawah ini:</p>
+
+      <p><pre class="code-language-javascript"><code>fungsiContoh(1, 2);</code></pre></p>
+
+      <p>
+        Maka, parameter <code>a</code> dalam fungsi di atas, akan berubah menjadi <code>1</code>
+        dan parameter <code>b</code> akan berubah menjadi <code>2</code>.
+      </p>
+
+      <p class="back-link"><a href="#contents">Daftar isi</a></p>
+
+      <h2 class="section-header" id="return-stmt">Return Statement</h2>
+
+      <p>
+        Sering kali, <em>function</em> digunakan untuk melakukan kalkulasi
+        kompleks yang mana hasilnya diperlukan untuk proses kalkulasi lebih lanjut.
+        Untuk mengeluarkan hasil kalkulasi dari sebuah <em>function</em>, digunakan
+        kata kunci <code>return</code> diikuti dengan data yang memuat hasil
+        kalkulasi di dalam <em>function</em> yang bersangkutan. Contohnya:
+      </p>
+
+      <p><pre class="code-language-javascript"><code>
+function penjumlahan(a, b) {
+  return a + b;
+}
+
+const c = penjumlahan(1, 2);
+</code></pre></p>
+
+      <p>
+        <em>Function</em> tersebut melakukan kalkulasi penjumlahan yang kemudian
+        hasilnya dikembalikan ke luar konteks <em>function</em> tersebut yang
+        mana dalam contoh di atas dimasukkan ke dalam <em>variable</em>
+        <code>c</code>.
+      </p>
+
+      <p>
+        Dengan demikian, kita dapat membuat <em>function</em> yang mana
+        menggunakan <em>function</em> yang lain. Contoh:
+      </p>
+
+      <p><pre class="code-language-javascript"><code>
+function double(angka) {
+  return angka * 2;
+}
+
+function kuadrat(angka) {
+  return angka * angka
+}
+
+function kalkulasiInternal(angka) {
+  const a = double(angka);
+  return kuadrat(a) + 1;
+}
+
+function kalkulasiRumit(angka) {
+  return kalkulasiInternal(angka) + kalkulasiInternal(angka);
+}
+
+const hasil = kalkulasiRumit(1);
+
+console.log(hasil); // Tebak, apa output nya?
+
+</code></pre></p>
+
+      <p class="back-link"><a href="#contents">Daftar isi</a></p>
+
+      <h2 class="section-header" id="method">Method</h2>
+
+      <p>
+        <code>Method</code> adalah sebuah <code>function</code> yang menjadi <code>property</code> dari sebuah <code>object</code>.
+        Contoh:
+      </p>
+
+      <p><pre class="code-language-javascript"><code>
+const user = {
+  name: 'Jack',
+  sayHello: function() {
+    const text = 'Hello, my name is ' + this.name;
+    console.log(text);
+  }
+};
+
+user.sayHello();
+</code></pre></p>
+
+      <p>
+        <code>Method</code> dan <code>function</code> pada prinsipnya sama. Perbedaannya adalah:
+      </p>
+
+      <ul>
+        <li>Penulisan <code>method</code> dapat dilakukan tanpa menuliskan nama <code>function</code>nya sebagaimana contoh di atas.</li>
+        <li>
+          Penulisan <code>method</code> dapat dituliskan langsung sebagai
+          <em>property</em> dari sebuah <code>object</code> sebagaimana contoh
+          di atas ataupun sebagai <code>variable</code> terpisah.
+        </li>
+        <li>
+          Di dalam <code>method</code> terdapat <code>variable</code> khusus
+          <code>this</code> yang dapat digunakan untuk mengakses
+          <em>property</em> object yang bersangkutan.
+        </li>
+        <li>
+          Penggunaan <code>Method</code> method dilakukan dengan mengakses method tersebut sebagai <em>property</em> kemudian dilakukan <code>function call</code>.
+        </li>
+      </ul>
+
+      <p>
+        Contoh penulisan method sebagai variable terpisah.
+      </p>
+
+      <p><pre class="code-language-javascript"><code>
+function namaFunction() {
+  const text = 'Hello, my name is ' + this.name;
+  console.log(text);
+}
+
+const user = {
+  name: 'Jack',
+  sayHello: namaFunction
+}
+
+user.sayHello();
+</code></pre></p>
+
+      <p class="back-link"><a href="#contents">Daftar isi</a></p>
+
+      <h2 class="section-header" id="conditional">Conditional</h2>
+
+      <p>
+        Terkadang sebuah program yang perlu dieksekusi ketika memenuhi kriteria tertentu. Eksekusi
+        program yang bergantung pada suatu kriteria disebut <em>conditional statement</em>.
+        <em>Conditional statement</em> dituliskan dengan menggunakan kata kunci <code>if</code>,
+        diikuti dengan tanda kurung (<code>()</code>) yang memuat syarat/kondisi, diikuti dengan
+        tanda kurung kurawal (<code>{}</code>) yang memuat <em>block</em> kode. Contoh:
+      </p>
+
+      <p><pre class="code-language-javascript"><code>
+if (a &lt; 10) {
+  console.log(a, ' lebih kecil dari 10');
+}
+</code></pre></p>
+
+      <p>
+        Pada contoh di atas, kode yang berada di dalam kurung kurawal (<code>{}</code>) hanya
+        dieksekusi jika isi <code>a</code> adalah angka yang lebih besar dari <strong>10</strong>.
+      </p>
+
+      <p>
+        <em>Conditional statement</em> dapat juga memuat alternatif kode yang akan dijalankan ketika
+        syarat yang terdapat di <code>if</code> tidak terpenuhi. Caranya adalah dengan menambahkan
+        kata kunci <code>else</code> setelah tutup kurawal (<code>}</code>) milik <code>if</code>.
+        Contoh:
+      </p>
+
+      <p><pre class="code-language-javascript"><code>
+if (a &lt; 10) {
+  console.log(a, ' lebih kecil dari 10');
+} else {
+  console.log(a, ' lebih besar dari 10');
+}
+</code></pre></p>
+
+      <p>
+        Alternatif dari <em>conditional statement</em> bisa lebih dari satu cabang dengan
+        menggunakan <code>else if</code> yang dituliskan sebagaimana <code>if</code> namun
+        dituliskan sesudah <em>block</em> <code>if</code> dan sebelum <em>block</em> <code>else</code>
+        (jika <em>block</em> <code>else</code> diperlukan). Contoh:
+      </p>
+
+      <p><pre class="code-language-javascript"><code>
+if (a &lt; 10) {
+  console.log(a, ' lebih kecil dari 10');
+} else if (a &lt; 20) {
+  console.log(a, ' lebih kecil dari 20');
+} else if (a &lt; 30) {
+  console.log(a, ' lebih kecil dari 30');
+} else if (a &lt; 40) {
+  console.log(a, ' lebih kecil dari 40');
+}
+</code></pre></p>
+
+      <p>Contoh tanpa <em>block</em> <code>else</code>:</p>
+
+      <p><pre class="code-language-javascript"><code>
+if (a &lt; 10) {
+  console.log(a, ' lebih kecil dari 10');
+} else if (a &lt; 20) {
+  console.log(a, ' lebih kecil dari 20');
+} else if (a &lt; 30) {
+  console.log(a, ' lebih kecil dari 30');
+} else if (a &lt; 40) {
+  console.log(a, ' lebih kecil dari 40');
+} else {
+  console.log(a, ' lebih besar dari 40');
+}
+</code></pre></p>
+
+      <p class="back-link"><a href="#contents">Daftar isi</a></p>
+
+    </div>
+  </body>
+</html>
