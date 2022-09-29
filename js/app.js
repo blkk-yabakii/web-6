@@ -18,11 +18,11 @@ const users = [
 ];
 
 
-console.log(duaKaliLipat(1) + kuadrat(1));
-console.log(duaKaliLipat(2) + kuadrat(2));
-console.log(duaKaliLipat(3) + kuadrat(3));
-console.log(duaKaliLipat(4) + kuadrat(4));
-console.log(duaKaliLipat(5) + kuadrat(5));
+console.log(duaKaliLipat(1) + kuadrat(1)); // 1
+console.log(duaKaliLipat(2) + kuadrat(2)); // 4
+console.log(duaKaliLipat(3) + kuadrat(3)); // 15
+console.log(duaKaliLipat(4) + kuadrat(4)); // 24
+console.log(duaKaliLipat(5) + kuadrat(5)); // 35
 
 // buat fungsi untuk menghitung
 // 1. angka dua kali lipat.
