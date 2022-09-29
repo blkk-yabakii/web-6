@@ -16,3 +16,16 @@ const users = [
   { name: "Mella F", age: '20' },
   { name: "Waridatul w", age: '20' },
 ];
+
+
+console.log(duaKaliLipat(1) + kuadrat(1));
+console.log(duaKaliLipat(2) + kuadrat(2));
+console.log(duaKaliLipat(3) + kuadrat(3));
+console.log(duaKaliLipat(4) + kuadrat(4));
+console.log(duaKaliLipat(5) + kuadrat(5));
+
+// buat fungsi untuk menghitung
+// 1. angka dua kali lipat.
+// 2. kuadrat
+// 3. hasil dari 1 di tambah hasil dari 2
+// parameter: terserah
