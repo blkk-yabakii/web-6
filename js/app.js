@@ -1,25 +1,33 @@
-const input = document.getElementById("isian");
-const button = document.getElementById("tombol");
+const label = document.getElementById('label');
+const url = document.getElementById('url');
+const button = document.getElementById('tombol');
+const output = document.getElementById('output');
 
-const output = document.getElementById("output");
-
-const daftarNama = [];
+const daftar = [];
 
 function onClick() {
-  const namaBaru = input.value;
+  const item = {
+    label: label.value,
+    url: url.value,
+  };
 
-  if (namaBaru.length > 0) {
-    daftarNama.push(namaBaru);
+  if (item.label.length > 0 && item.url.length > 0) {
+    daftar.push(item);
 
-    let html = "";
-    html += "<ul>";
-    for (let i = 0; i < daftarNama.length; i++) {
-      const nama = daftarNama[i];
-      html += "<li>" + nama + "</li>";
+    let html = '';
+    html += '<ul>';
+
+    for (let i = 0; i < daftar.length; i++) {
+      const li = '<li><a href="' + daftar[i].url + '">' + daftar[i].label + '</a></li>';
+      html += li;
     }
-    html += "</ul>";
 
+    html += '</ul>';
     output.innerHTML = html;
+
+    label.value = '';
+    url.value = '';
   }
 }
+
 button.addEventListener("click", onClick);
