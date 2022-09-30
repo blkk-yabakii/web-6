@@ -1,13 +1,11 @@
-const input = document.getElementById('isian');
-const button = document.getElementById('tombol');
+const input = document.getElementById("isian");
+const button = document.getElementById("tombol");
 
-const users = [];
+const output = document.getElementById('output');
 
 function onClick() {
-  const user = { name: input.value };
-  users.push(user);
+  const isiInput = input.value;
 
-  console.log(users);
+  output.innerHTML = isiInput;
 }
-
-button.addEventListener('click', onClick);
+button.addEventListener("click", onClick);
