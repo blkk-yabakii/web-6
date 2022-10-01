@@ -1,33 +1,44 @@
-const label = document.getElementById('label');
-const url = document.getElementById('url');
-const button = document.getElementById('tombol');
-const output = document.getElementById('output');
-
+const label = document.getElementById("label");
+const url = document.getElementById("url");
+const button = document.getElementById("tombol");
+const output = document.getElementById("output");
 const daftar = [];
 
-function onClick() {
-  const item = {
-    label: label.value,
-    url: url.value,
-  };
-
-  if (item.label.length > 0 && item.url.length > 0) {
-    daftar.push(item);
-
-    let html = '';
-    html += '<ul>';
-
-    for (let i = 0; i < daftar.length; i++) {
-      const li = '<li><a href="' + daftar[i].url + '">' + daftar[i].label + '</a></li>';
-      html += li;
-    }
-
-    html += '</ul>';
-    output.innerHTML = html;
-
-    label.value = '';
-    url.value = '';
-  }
+function buatLink(label, url) {
+  return '<a href="' + url + '">' + label + "</a>";
 }
 
+function buatItem(item) {
+  return "<li>" + item + "</li>";
+}
+
+function buatDaftar(daftar) {
+  let html = "";
+  html += "<ul>";
+  for (let i = 0; i < daftar.length; i++) {
+    const link = buatLink(daftar[i].label, daftar[i].url);
+    const list = buatItem(link);
+    html += list;
+  }
+  html += "</ul>";
+  return html;
+}
+function valid(item) {
+  const ketemu = daftar.findIndex(function (elem) {
+    return elem.label === item.label;
+  });
+  return item.label.length > 0 && item.url.length > 0 && ketemu === -1;
+}
+function onClick() {
+  const item = {
+    nama: label.value,
+    link: url.value,
+  };
+  if (valid(item)) {
+    daftar.push(item);
+    output.innerHTML = buatDaftar(daftar);
+    label.value = "";
+    url.value = "";
+  }
+}
 button.addEventListener("click", onClick);
