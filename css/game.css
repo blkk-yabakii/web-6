@@ -1,0 +1,35 @@
+#button-area {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+}
+
+#button-area button {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+#arrow-left {
+  left: 0;
+  top: 30px;
+}
+
+#arrow-up {
+  left: 30px;
+  top: 0;
+}
+
+#arrow-right {
+  left: 60px;
+  top: 30px;
+}
+
+#arrow-down {
+  left: 30px;
+  top: 60px;
+}
