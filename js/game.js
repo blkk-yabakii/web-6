@@ -62,3 +62,20 @@ buttons.left.addEventListener("click", handlers.left);
 buttons.right.addEventListener("click", handlers.right);
 buttons.up.addEventListener("click", handlers.up);
 buttons.down.addEventListener("click", handlers.down);
+
+const arena = document.getElementById('arena');
+arena.addEventListener('keydown', function(event) {
+  if (event.key === 'ArrowUp') {
+    handlers.up();
+    event.preventDefault();
+  } else if (event.key === 'ArrowDown') {
+    handlers.down();
+    event.preventDefault();
+  } else if (event.key === 'ArrowLeft') {
+    handlers.left();
+    event.preventDefault();
+  } else if (event.key === 'ArrowRight') {
+    handlers.right();
+    event.preventDefault();
+  }
+})
