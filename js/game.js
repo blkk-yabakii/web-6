@@ -5,18 +5,56 @@ const buttons = {
   down: document.getElementById("arrow-down"),
 };
 
+const player = document.getElementById('player');
+
 const handlers = {
   left: function () {
-    console.log("left");
+    const left = player.style.left;
+    if (left.length > 0) {
+      const leftN = parseInt(left.slice(0, left.length - 2), 10);
+      const result = leftN - 30;
+      if (result >= 0) {
+        player.style.left = result.toString() + 'px';
+      }
+    } else {
+      player.style.left = '0px';
+    }
   },
   right: function () {
-    console.log("right");
+    const left = player.style.left;
+    if (left.length > 0) {
+      const leftN = parseInt(left.slice(0, left.length - 2), 10);
+      const result = leftN + 30;
+      if (result < 300) {
+        player.style.left = result.toString() + 'px';
+      }
+    } else {
+      player.style.left = '30px';
+    }
   },
   up: function () {
-    console.log("up");
+    const top = player.style.top;
+    if (top.length > 0) {
+      const topN = parseInt(top.slice(0, top.length - 2), 10);
+      const result = topN - 30;
+      if (result >= 0) {
+        player.style.top = result.toString() + 'px';
+      }
+    } else {
+      player.style.top = '0px';
+    }
   },
   down: function () {
-    console.log("down");
+    const top = player.style.top;
+    if (top.length > 0) {
+      const topN = parseInt(top.slice(0, top.length - 2), 10);
+      const result = topN + 30;
+      if (result < 300) {
+        player.style.top = result.toString() + 'px';
+      }
+    } else {
+      player.style.top = '30px';
+    }
   },
 };
 
